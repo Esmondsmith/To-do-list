@@ -43,6 +43,7 @@ const TodoWrap = () => {
         ) : (
             <Todo task={todo} key={index} toggleComplete={toggleComplete} deleteTodo={deleteTodo} editTodo={editTodo}/>
         )
+        
       ))}
     </div>
   )

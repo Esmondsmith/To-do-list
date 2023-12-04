@@ -11,7 +11,6 @@ const EditTodoForm = ({editTodo, task}) => {
     //This is used to clear the input field after the value entered in submitted
     setValue ('')
   }
-  
 
   return (
     <form className='TodoForm' onSubmit={handleSubmit}>
