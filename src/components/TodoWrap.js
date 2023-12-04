@@ -9,6 +9,7 @@ uuidv4();
 
 const TodoWrap = () => {
 
+    //making the useState empty
     const [todos, setTodos] = useState ([])
 
     const addTodo = todo => {
@@ -32,7 +33,6 @@ const TodoWrap = () => {
         setTodos(todos.map(todo => todo.id === id ? {...todo, task, isEditing: !todo.isEditing} : todo))
     }
 
-
   return (
     <div className='TodoWrap'>
         <h1 className='Todoh1'>Things To Do Today</h1>
@@ -43,7 +43,7 @@ const TodoWrap = () => {
         ) : (
             <Todo task={todo} key={index} toggleComplete={toggleComplete} deleteTodo={deleteTodo} editTodo={editTodo}/>
         )
-        
+
       ))}
     </div>
   )
