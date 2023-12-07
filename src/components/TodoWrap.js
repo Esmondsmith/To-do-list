@@ -3,9 +3,8 @@ import {v4 as uuidv4} from 'uuid';
 import Todo from './Todo'
 import EditTodoForm from './EditTodoForm'
 import TodoForm from './TodoForm'
-
-
 uuidv4();
+
 
 const TodoWrap = () => {
 
@@ -13,7 +12,8 @@ const TodoWrap = () => {
     const [todos, setTodos] = useState ([])
 
     const addTodo = todo => {
-        setTodos([...todos, {id: uuidv4(), task:todo, completed: false, isEdited: false}])
+        //we make a copy of the current todos state by using the spread operator ...todos
+        setTodos([...todos, {id: uuidv4(), task:todo, completed: false, isEditing: false}])
         console.log(todos)
     }
 
@@ -35,7 +35,7 @@ const TodoWrap = () => {
 
   return (
     <div className='TodoWrap'>
-        <h1 className='Todoh1'>Things To Do Today</h1>
+        <h1 className='Todoh1'>Things To Do <span style={{color: "rgb(166, 100, 100)"}}>Today</span></h1>
       <TodoForm addTodo={addTodo}/>
       {todos.map((todo, index) => (
         todo.isEditing ? (
