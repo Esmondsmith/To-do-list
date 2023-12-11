@@ -8,14 +8,13 @@ const EditTodoForm = ({editTodo, task}) => {
     e.preventDefault();
 
     editTodo(value, task.id)
-    //This is used to clear the input field after the value entered in submitted
     setValue ('')
   }
 
   return (
     <form className='TodoForm' onSubmit={handleSubmit}>
       <input type='text' placeholder='Update todays task' className='todo-input' value={value} onChange={(e) => setValue(e.target.value)}/>
-      <button type='ssubmit' className='todo-btn'>Update</button>
+      <button type='submit' className='todo-btn'>Update</button>
     </form>
   )
 }

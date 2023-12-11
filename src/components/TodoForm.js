@@ -6,15 +6,16 @@ const TodoForm = ({addTodo}) => {
 
   const handleSubmit = e => {
     e.preventDefault(); //To prevent default action of the form.
-    // if(value === ""){
-    //   alert("please enter a task")
-    // } else {
-    //   console.log({value})
-    //   alert(`${value} has been added to the list`);
-    // }
-    addTodo(value)
+    if(value === ""){
+      alert("please enter a task to do")
+    } else {
+      addTodo(value)
     //This is used to clear the input field after the value entered is submitted
-    setValue ('')
+      setValue ('')
+    }
+    // addTodo(value)
+    // //This is used to clear the input field after the value entered is submitted
+    // setValue ('')
   }
 
   return (

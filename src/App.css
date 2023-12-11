@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  width: 50%;
 }
 
 
@@ -41,7 +42,7 @@
 
 .todo-input {
   height: 30px;
-  width: 400px;
+  width:50%;
 }
 
 .todo-icon{
