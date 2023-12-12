@@ -13,9 +13,6 @@ const TodoForm = ({addTodo}) => {
     //This is used to clear the input field after the value entered is submitted
       setValue ('')
     }
-    // addTodo(value)
-    // //This is used to clear the input field after the value entered is submitted
-    // setValue ('')
   }
 
   return (
