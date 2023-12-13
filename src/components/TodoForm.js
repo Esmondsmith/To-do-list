@@ -1,4 +1,4 @@
-import React, {useState} from 'react' //We import useState to be able to keep track of what the users entered in the input field
+import React, {useState, useEffect, useRef} from 'react' //We import useState to be able to keep track of what the users entered in the input field. while the useEffect and useRef here are used to make focu on the input field for new values and editing old values. 
 
 const TodoForm = ({addTodo}) => {
 
@@ -10,15 +10,20 @@ const TodoForm = ({addTodo}) => {
       alert("please enter a task to do")
     } else {
       addTodo(value)
-    //This is used to clear the input field after the value entered is submitted
+    //setValue('') is used to clear the input field after the value entered is submitted
       setValue ('')
     }
   }
 
+  const enterRef = useRef()
+  useEffect(() => {
+    enterRef.current.focus()
+  })
+
   return (
     <form className='TodoForm' onSubmit={handleSubmit}>
       {/* To get the user input, we add the onChange event to the input field*/}
-      <input type='text' placeholder='Task to do today' className='todo-input' value={value} onChange={(e) => {setValue(e.target.value)}}/>
+      <input type='text' placeholder='Task to do today' className='todo-input' value={value} onChange={(e) => {setValue(e.target.value)}} ref={enterRef}/>
       <button type='submit' className='todo-btn'>Add Task</button>
     </form>
   )

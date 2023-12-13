@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect, useRef} from 'react'
 import TodoForm from './TodoForm'
 
 const EditTodoForm = ({editTodo, task}) => {
@@ -11,9 +11,16 @@ const EditTodoForm = ({editTodo, task}) => {
     setValue ('')
   }
 
+  //For creating focus on the input fields for edit.
+  const inputFocus = useRef()
+  useEffect(() => {
+    inputFocus.current.focus()
+  })
+
+
   return (
     <form className='TodoForm' onSubmit={handleSubmit}>
-      <input type='text' placeholder='Update todays task' className='todo-input' value={value} onChange={(e) => setValue(e.target.value)}/>
+      <input type='text' placeholder='Update todays task' className='todo-input' value={value} onChange={(e) => setValue(e.target.value)} ref={inputFocus}/>
       <button type='submit' className='todo-btn'>Update</button>
     </form>
   )
